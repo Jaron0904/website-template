@@ -111,3 +111,24 @@
       width: 100%;
     }
   }
+.button { 
+height: 50px; 
+width: 100px; 
+float: left;
+border: none;
+margin-left: 50%;
+background-color: #1abc9c;
+border-radius: 10%;
+} 
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons i {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #333;
+}
