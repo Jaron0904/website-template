@@ -11,7 +11,8 @@
 <body>
 
     <div class="navbar">
-        <a href="#">Link2</a>
+        <a href="CV.html">CV</a>
+        <a href="IPC-201c.html">IPC-201c</a>
         <a href="Whistle life.html">Whistle life</a>
         <a href="index.html">Home</a>
     </div>
@@ -22,19 +23,20 @@
     </div>
     <h2>Contacteer mij</h2>
     <p>Voor meer informatie mag je gerust je contactgegevens nalaten zodat ik je kan contacteren.</p>
-    <form>
+    <form action="mailto:Jaron.Igodt@Ugent.be" method="post">
+       
         <table>
         <tr>
             <td><label for="fname">Voornaam:</label></td>
-            <td><input type="text" id="fname" name="fname"></td>
+            <td><input type="text" id="fname" name="fname" required value="" placeholder="Jan"></td>
         </tr>
         <tr>
             <td><label for="lname">Familienaam</label></td>
-            <td><input type="text" id="lname" name="lname"></td>
+            <td><input type="text" id="lname" name="lname" required value="" placeholder="Jansens"></td>
         </tr>
         <tr>
             <td> <label for="email">E-mailadres</label></td>
-            <td><input type="email" id="email" name="email"></td>
+            <td><input type="email" id="email" name="email" required value="" placeholder="Jan.Jansens@outlook.com"></td>
         </tr>
         <tr>
             <td><label for="question">Stel je vraag:</label></td>
@@ -44,8 +46,9 @@
             
             <td colspan="2"><input type="submit" value="Verstuur" class="button"></td>
         </tr>
-    </form>
     </table>
+    </form>
+    
       
     <div class="footer">
         <h3>Contact</h3>

@@ -10,9 +10,15 @@
   
   /* Header/logo Title */
   .header {
-    padding: 80px;
+    padding: 50px;
     text-align: center;
     background: #1abc9c;
+    color: white;
+  }
+  .headerwhistle{
+    padding: 50px;
+    text-align: center;
+    background: #6f81f4;
     color: white;
   }
   
@@ -80,15 +86,9 @@
     -ms-flex: 70%; /* IE10 */
     flex: 70%;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
   }
   
-  /* Fake image, just for this example */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-  }
   
   /* Footer */
   .footer {
@@ -131,4 +131,29 @@ border-radius: 10%;
   margin: 0 10px;
   font-size: 20px;
   color: #333;
+}
+#schetsen{
+ max-width: 24%;
+}
+#renders{
+  max-width: 33%;
+  margin: 0px;
+}
+h4{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1{
+  margin-top: 0px;
+}
+h2{
+  margin-top: 0px;
+}
+.body{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+#IPC{
+  width: 98%;
 }
