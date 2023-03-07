@@ -1,0 +1,274 @@
+*{
+    box-sizing: border-box;
+    
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+
+
+
+/* navigatie bar*/
+.navbar {
+    overflow:-moz-hidden-unscrollable;
+    background-color: #333;
+    font-family: Arial;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+  }  
+  .navbar a {
+    float: right;
+    display:block;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+}
+  /* Change color on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+  }
+  /* Change color on active */
+  .navbar a:active {
+    background-color: rgb(92, 138, 245);
+    color: black;
+  }
+  /* The dropdown container */
+  .dropdown {
+    float: right;
+    overflow:visible;
+  }
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+
+
+  /*Proces bundel weergave*/
+  .boekje{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boekje {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    font-family: sans-serif;
+    
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 40%;
+    transition: transform 0.8s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 3000px;
+
+}
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    
+}
+.back {
+    z-index: 0;
+}
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 120px;
+    transition: transform 1s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 6;
+}
+
+#p2 {
+    z-index: 5;
+}
+
+#p3 {
+    z-index: 4;
+}
+#p4{
+    z-index: 3;
+}
+#p5{
+    z-index: 2;
+}
+#p6{
+    z-index: 1;
+}
+
+
+
+
+
+
+/* Opmaak*/
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+.header h1 {
+  font-size: 40px;
+}
+#schetsen{
+  max-width: 24%;
+}
+#renders{
+  max-width: 33%;
+  margin: 0px;
+}
+h4{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: left;
+}
+h1{
+  margin-top: 0px;
+}
+h2{
+  margin-top: 0px;
+}  
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 30px;
+}
+.Productboekje{
+  height: 15vh;
+  padding: 30px;
+  background-color: aquamarine;
+  
+}
+#titel{
+  padding-top: 35px;
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+.logos{
+  width: 50px;
+  height: 50px;
+}
