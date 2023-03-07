@@ -113,6 +113,7 @@
     padding: 20px;
     text-align: center;
     background: #ddd;
+    
   }
   
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -124,20 +125,11 @@
   
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 400px) {
-    .navbar a {
+    .navbar a,.dropbtn {
       float: none;
       width: 100%;
     }
   }
-.button { 
-height: 50px; 
-width: 100px; 
-float: left;
-border: none;
-margin-left: 50%;
-background-color: #1abc9c;
-border-radius: 10%;
-} 
 
 .icons {
   display: flex;
@@ -399,8 +391,41 @@ i {
 .invulbalk{
   border-radius: 10px;
   width: 250px;
+  margin: 5px;
+  padding: 5px;
 }
 .logos{
   width: 50px;
   height: 50px;
 }
+.contact{
+text-align: center;
+margin-top: 15px;
+}
+.tabel{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:justify;
+}
+textarea{
+  margin-left: 50%;
+  margin-right: auto;
+}
+.button { 
+  height: 50px; 
+  width: 100px; 
+  margin-right: 50%;
+  border: none;
+  margin-left: 50%;
+  background-color: #1abc9c;
+  border-radius: 10%;
+  } 
+.button:hover{
+  background-color: #199f84;
+}
+#verstuur{
+  margin-left: 32%;
+  margin-right: 68%;
+  margin-bottom: 62px;
+}
+  
