@@ -1,6 +1,6 @@
 // References to DOM Elements
-const prevBtn = document.querySelector("#prev-btn");
-const nextBtn = document.querySelector("#next-btn");
+const prevBtn = document.querySelector("#buttonlinks");
+const nextBtn = document.querySelector("#buttonrechts");
 const book = document.querySelector("#book");
 
 const paper1 = document.querySelector("#p1");
@@ -114,3 +114,15 @@ function goPrevPage() {
         currentLocation--;
     }
 }
+function darkMode() {
+    var element = document.body;
+    var content = document.getElementById("DarkModetext");
+    element.className = "dark-mode";
+    content.innerText = "Dark Mode is ON";
+  }
+  function lightMode() {
+    var element = document.body;
+    var content = document.getElementById("DarkModetext");
+    element.className = "light-mode";
+    content.innerText = "Dark Mode is OFF";
+  }

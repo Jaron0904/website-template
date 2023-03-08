@@ -172,13 +172,21 @@ body {
 }
 
 /* Controller Buttons */
-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin: 120px;
-    transition: transform 1s;
+#buttonrechts {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-left: 12%;
+  transition: transform 1s;
 }
+#buttonlinks {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-right: 12%;
+  transition: transform 1s;
+}
+
 
 button:focus {
     outline: none;
