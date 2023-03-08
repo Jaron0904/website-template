@@ -1,16 +1,14 @@
 * {
     box-sizing: border-box;
   }
-  img.fotosH:active{
-    
-    position: absolute;
+  img.fotosH:active{    
+    position: fixed;
     top: 50%;
-   
     left: 50%;
     transform: translate(-50%, -50%) scale(0.5);
   }
   img.fotosV:active{
-    position: absolute;
+    position:fixed;
     left: 50%;
     top:50%;
     transform: translate(-50%,-50%) scale(0.35);
@@ -27,12 +25,6 @@
     padding: 50px;
     text-align: center;
     background: #1abc9c;
-    color: white;
-  }
-  .headerwhistle{
-    padding: 50px;
-    text-align: center;
-    background: #6f81f4;
     color: white;
   }
   
@@ -58,7 +50,6 @@
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-
   }
 
   /* Right-aligned link */
@@ -80,8 +71,6 @@
     background-color: rgb(92, 138, 245);
     color: black;
   }
-  
-
   /* Column container */
   .row {  
     display: -ms-flexbox; /* IE10 */
@@ -98,7 +87,6 @@
     background-color: #f1f1f1;
     padding: 20px;
   }
-  
   /* Main column */
   .main {   
     -ms-flex: 70%; /* IE10 */
@@ -106,8 +94,6 @@
     background-color: white;
     padding: 30px;
   }
-  
-  
   /* Footer */
   .footer {
     padding: 20px;
@@ -125,11 +111,16 @@
   
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 400px) {
-    .navbar a,.dropbtn {
+    .navbar a {
       float: none;
       width: 100%;
     }
   }
+  @media screen and (max-width: 400px) {
+    .dropbtn{
+      display: flex;
+      justify-content: center;
+    }
 
 .icons {
   display: flex;
@@ -153,12 +144,10 @@ h4{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-h1{
+h1,h2{
   margin-top: 0px;
 }
-h2{
-  margin-top: 0px;
-}
+
 .body{
   margin-left: 20px;
   margin-right: 20px;
