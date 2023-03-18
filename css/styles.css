@@ -2,17 +2,28 @@
     box-sizing: border-box;
   }
 
-  img.fotosH:active{    
+  img.fotosH:active{
+    
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%,-50%) scale(0.5);
+    z-index: 1;
+    
+  }
+
+  @media (min-width: 1000px) {
+    .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
   }
   img.fotosV:active{
     position:fixed;
     left: 50%;
     top:50%;
     transform: translate(-50%,-50%) scale(0.35);
+    
   }
 
   /* Style the body */
@@ -20,18 +31,28 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
   }
-  
+  .GIP,.CV{
+    background-color: #f1f1f1;
+    padding: 30px;
+  }
+  .piano,.whistle{
+    padding: 30px;
+  }
   /* Header/logo Title */
   .header {
+    height: 100vh;
     padding: 50px;
     text-align: center;
-    background: #1abc9c;
+    background: #232741;
     color: white;
   }
   
 /*Lettertypes*/
+
   .header h1 {
-    font-size: 40px;
+    font-size: 50px;
+    text-align: center;
+    margin-top:40vh;
   }
 h4{
   margin-top: 10px;
@@ -39,6 +60,9 @@ h4{
 }
 h1,h2{
   margin-top: 0px;
+}
+h3{
+  margin: 0px;
 }
 /*Einde lettertypes*/
  
@@ -79,6 +103,22 @@ h1,h2{
   /*Einde navigatie bar*/
   /*Einde navigatie bar*/
   /*Einde navigatie bar*/
+  a:link {
+    color: #717171;
+    background-color: transparent;
+    text-decoration: none;
+    
+  }
+  a:visited {
+    color: #717171;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+  
+  }
 
 
 
@@ -103,7 +143,7 @@ h1,h2{
     -ms-flex: 70%; /* IE10 */
     flex: 70%;
     background-color: white;
-    padding: 30px;
+    padding: 0px;
   }
   /* Footer */
   .footer {

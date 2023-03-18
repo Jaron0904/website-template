@@ -18,6 +18,7 @@ body {
     position: fixed;
     width: 100%;
     margin: 0;
+    z-index: 1;
   }  
   .navbar a {
     float: right;
@@ -95,7 +96,10 @@ body {
   }
 
 
-
+.Productboekje{
+  background-color: #d5d5d5;
+  padding: 30px;
+}
 
 
 
@@ -104,6 +108,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color:#d5d5d5;
 }
 
 .boekje {
@@ -111,9 +116,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
     font-family: sans-serif;
-    
 }
 
 /* Book */
@@ -123,6 +126,7 @@ body {
     transition: transform 0.8s;
 }
 
+
 .paper {
     position: absolute;
     width: 100%;
@@ -130,7 +134,6 @@ body {
     top: 0;
     left: 0;
     perspective: 3000px;
-
 }
 .front,
 .back {
@@ -262,12 +265,7 @@ h2{
   background-color: white;
   padding: 30px;
 }
-.Productboekje{
-  height: 15vh;
-  padding: 30px;
-  background-color: aquamarine;
-  
-}
+
 #titel{
   padding-top: 35px;
 }
