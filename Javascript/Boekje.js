@@ -22,8 +22,8 @@ let maxLocation = numOfPapers + 1;
 
 function openBook() {
     book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+    prevBtn.style.transform = "translateX(-60%)";
+    nextBtn.style.transform = "translateX(60%)";
 }
 
 function closeBook(isAtBeginning) {
@@ -43,30 +43,30 @@ function goNextPage() {
             case 1:
                 openBook();
                 paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
+                paper1.style.zIndex = 6;
                 break;
             case 2:
                 paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
+                paper2.style.zIndex = 7;
                 break;
             case 3:
                 paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
+                paper3.style.zIndex = 8;
                 break;
             case 4:
                 openBook();
                 paper4.classList.add("flipped");
-                paper4.style.zIndex = 4;
+                paper4.style.zIndex = 9;
                 break;
             case 5:
                 openBook();
                 paper5.classList.add("flipped");
-                paper5.style.zIndex = 5;
+                paper5.style.zIndex = 10;
                 break;
             case 6:
                 openBook();
                 paper6.classList.add("flipped");
-                paper6.style.zIndex = 6;
+                paper6.style.zIndex = 11;
                 closeBook(false);
                 break;
             default:
@@ -82,31 +82,31 @@ function goPrevPage() {
             case 2:
                 closeBook(true);
                 paper1.classList.remove("flipped");
-                paper1.style.zIndex = 6;
+                paper1.style.zIndex = 11;
                 break;
             case 3:
                 paper2.classList.remove("flipped");
-                paper2.style.zIndex = 5;
+                paper2.style.zIndex = 10;
                 break;
             case 4:
                 openBook();
                 paper3.classList.remove("flipped");
-                paper3.style.zIndex = 4;
+                paper3.style.zIndex = 9;
                 break;
             case 5:
                 openBook();
                 paper4.classList.remove("flipped");
-                paper4.style.zIndex = 3;
+                paper4.style.zIndex = 8;
                 break;
             case 6:
                 openBook();
                 paper5.classList.remove("flipped");
-                paper5.style.zIndex = 2;
+                paper5.style.zIndex = 7;
                 break;
             case 7:
                 openBook();
                 paper6.classList.remove("flipped");
-                paper6.style.zIndex = 1;
+                paper6.style.zIndex = 6;
                 break;
             default:
                 throw new Error("unkown state");
@@ -114,15 +114,3 @@ function goPrevPage() {
         currentLocation--;
     }
 }
-function darkMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
-    element.className = "dark-mode";
-    content.innerText = "Dark Mode is ON";
-  }
-  function lightMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
-    element.className = "light-mode";
-    content.innerText = "Dark Mode is OFF";
-  }

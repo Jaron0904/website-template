@@ -13,7 +13,7 @@ body {
 /* navigatie bar*/
 .navbar {
     overflow:-moz-hidden-unscrollable;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.9);
     font-family: Arial;
     position: fixed;
     width: 100%;
@@ -21,7 +21,7 @@ body {
     z-index: 1;
   }  
   .navbar a {
-    float: right;
+    float: left;
     display:block;
     font-size: 16px;
     color: white;
@@ -31,7 +31,7 @@ body {
   }
   /* Right-aligned link */
   .navbar a.right {
-    float: right;
+    float: left;
   }
   @media screen and (max-width: 400px) {
     .navbar a {
@@ -51,7 +51,7 @@ body {
   }
   /* The dropdown container */
   .dropdown {
-    float: right;
+    float: left;
     overflow:visible;
   }
   /* Dropdown button */
@@ -206,24 +206,24 @@ i {
 
 /* Paper stack order */
 #p1 {
-    z-index: 6;
+    z-index: 0;
 }
 
 #p2 {
-    z-index: 5;
+    z-index: -1;
 }
 
 #p3 {
-    z-index: 4;
+    z-index: -2;
 }
 #p4{
-    z-index: 3;
+    z-index: -3;
 }
 #p5{
-    z-index: 2;
+    z-index: -4;
 }
 #p6{
-    z-index: 1;
+    z-index: -5;
 }
 
 
