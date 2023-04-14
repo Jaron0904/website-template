@@ -6,13 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="script" href="Javascript/test.js">
+    
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> 
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Delicious Handrawn" rel="stylesheet">
+    <meta charset="utf-8" />
+    
 </head>
-
 <body>
-
     <div class="navbar">
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
@@ -21,18 +25,35 @@
                 <a href="Whistle life.html">Whistle life</a>
             </div>
         </div>
-        <a href="foto's.html">Foto's</a>   
+        <a href="foto's.html">Foto's</a>  
+        <a href="robot.html">Robot</a> 
     </div>
+
     <div class="header">
         <h1>Jaron Igodt</h1>
         <p>Portfolio website</p>
     </div>
+    <div id="sidebar">
+        <div id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        <ul>
+          <li><a href="#projecten">Mijn projecten</a></li>
+          <li><a href="#CV">Curriculum Vitae</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <script src="javascript/sidebar.js"></script>  
     <div class="row">
         <div class="side">
             <h2>Over mij</h2>
             <img src="fotos/BIO.png" alt="BIO" width="170" height="170">
             <h3>Wie ben ik</h3>
-            <p>Ik ben Jaron Igodt en ben student aan de Universiteit van Gent campus Kortrijk. Hier studeer ik Industrieel Ontwerpen. In mijn vrije tijd ga ik graag gaan fietsen en hou ik mij ook graag bezig met muziek. Ik ben al een vijftal jaar leider in de KSA waar ik met veel liefde de snotaapjes entertain. 
+            <p>Ik ben Jaron Igodt en ben student aan de Universiteit van Gent campus Kortrijk. Hier studeer ik Industrieel Ontwerpen. 
+                In mijn vrije tijd ga ik graag gaan fietsen en hou ik mij ook graag bezig met muziek. 
+                Ik ben al een vijftal jaar leider in de KSA waar ik met veel liefde de snotaapjes entertain. 
                 In de vakantie kan je mij voornamelijk vinden aan zee waar ik teambuildings en sportdagen moet begeleiden bij The Outsider Coast. </p>
             <h3>Opleidingen</h3>
             <ul style="list-style-type: circle;">
@@ -44,7 +65,7 @@
         </div>
         <div class="main">
             <div class="piano">
-            <h1>Mijn projecten</h1>
+            <h1 id="projecten">Mijn projecten</h1>
             <h2>Elektronische piano</h2>
             <h5>23 januari, 2018</h5>
             <video width="400" height="300" controls>
@@ -81,7 +102,7 @@
                 Wil je het doorlopen project zien, klik dan <a href="Whistle life.html">hier</a>.</p>
          </div>
          <div class="CV">
-        <h2>Curriculum Vitae</h2>
+        <h2 id="CV">Curriculum Vitae</h2>
         <p>Download <a href="Curriculum-Vitae-Jaron-Igodt.pdf">hier </a>mijn Curriculum Vitae.</p>
         <h4 style="text-decoration: underline;">Persoonlijke gegevens</h4>
         <div class="row">
@@ -160,8 +181,7 @@
         </div>
     </div>
     </div>
-   
-    <div class="contact">
+    <div class="contact" id="contact">
         <h2>Contacteer mij</h2>
         <p>Voor meer informatie mag je gerust je contactgegevens nalaten zodat ik je kan contacteren.</p>
         <form action="mailto:Jaron.Igodt@Ugent.be" method="post">
@@ -189,7 +209,6 @@
             </table>
         </form>
         </div>
-
     <div class="footer">
         <h3>Contact</h3>
         <p>Email: Jaron.Igodt@Ugent.be</p>

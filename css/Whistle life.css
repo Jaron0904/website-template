@@ -12,88 +12,97 @@ body {
 
 /* navigatie bar*/
 .navbar {
-    overflow:-moz-hidden-unscrollable;
-    background-color: rgba(0, 0, 0, 0.9);
-    font-family: Arial;
-    position: fixed;
-    width: 100%;
-    margin: 0;
-    z-index: 1;
-  }  
-  .navbar a {
-    float: left;
-    display:block;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  /* Right-aligned link */
-  .navbar a.right {
-    float: left;
-  }
-  @media screen and (max-width: 400px) {
-    .navbar a {
-      float: none;
-      width: 100%;
-    }
+  overflow:-moz-hidden-unscrollable;
+  background-color: rgba(87, 87, 87, 0.7);
+  font-family: Arial;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+  text-align: center;
+}  
+
+.navbar a {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin: auto;
 }
-  /* Change color on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #ddd;
-    color: black;
-  }
-  /* Change color on active */
-  .navbar a:active {
-    background-color: rgb(92, 138, 245);
-    color: black;
-  }
-  /* The dropdown container */
-  .dropdown {
-    float: left;
-    overflow:visible;
-  }
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-  }
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+
+/* Right-aligned link */
+@media screen and (max-width: 400px) {
+  .navbar a {
     float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+    width: 100%;
+    
   }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+}
+
+/* Change color on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Change color on active */
+.navbar a:active {
+  background-color: rgb(92, 138, 245);
+  color: black;
+}
+
+/* The dropdown container */
+.dropdown {
+  text-align: center;
+  display: inline-block;
+  overflow:visible;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 
 .Productboekje{
@@ -230,16 +239,17 @@ i {
 
 
 
-
 /* Opmaak*/
 .header {
+  height: 100vh;
   padding: 50px;
   text-align: center;
-  background: #1abc9c;
+  background: #232741;
   color: white;
 }
 .header h1 {
   font-size: 40px;
+  margin-top: 40vh;
 }
 #schetsen{
   max-width: 24%;
