@@ -46,6 +46,7 @@
     text-align: center;
     background: #232741;
     color: white;
+   
   }
   
 /*Lettertypes*/
@@ -72,10 +73,10 @@ h3{
   /*Navigatie bar*/
   .navbar {
     overflow:-moz-hidden-unscrollable;
-    
     position: fixed; 
     width: 100%;
     text-align: center;
+    
   }
   
   .navbar a {
@@ -94,6 +95,7 @@ h3{
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: rgb(221, 221, 221);
     color: rgb(0, 0, 0);
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
 
   }
   
@@ -239,6 +241,7 @@ h3{
   overflow:visible;
   background-color: rgba(87, 87, 87, 0.7);
   font-family: Arial;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 /* Links inside the navbar */
@@ -329,7 +332,8 @@ textarea{
   margin-right: 50%;
   border: none;
   margin-left: 50%;
-  background-color: #1abc9c;
+  color:#f1f1f1;
+  background-color: #232741;
   border-radius: 10%;
   } 
 .button:hover{
@@ -364,84 +368,107 @@ textarea{
   width: 50px;
   height: 50px;
 }
+.fotos{
+  cursor:pointer;
+}
 /*Einde Opmaak foto's*/
 /*Einde Opmaak foto's*/
 /*Einde Opmaak foto's*/
 canvas {
   display: block;
 }
-#sidebar {
+
+nav{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  
+
+}
+nav .logo{
+  display:flex;
+  align-items: center;
+  margin: 0 24px;;
+ 
+}
+.logo .menu-icon{
+  color:rgb(221, 221, 221);
+  cursor: pointer;
+  font-size: 40px;
+  margin-right: 10px;
+
+}
+nav .sidebar{
+  position: fixed;
+  top:0;
+  left:-100%;
+  height: 100%;
+  width:260px;
+  padding: 10px 0;
+  opacity: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 1px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+}
+nav.open .sidebar{
+  left: 0;
+}
+.sidebar .sidebar-content{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:30px 16px;
+}
+.sidebar-content .list{
+  list-style: none;
+  
+}
+
+.list .nav-link {
+  display: flex;
+  align-items:center;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 14px 12px;
+  
+}
+.lists .nav-link:hover{
+  background-color: #199f84;
+}
+
+.nav-link .icon{
+  margin-right: 5px;
+  font: size 5px;
+  color: #707070;
+  
+}
+.nav-link .link{
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+  
+}
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link{
+  color:#c0b5b5;
+}
+.overlay {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #f1f1f1;
-  overflow-x: hidden;
-  transition: 0.5s ease-in-out;
-  padding-top: 60px;
-}
-
-#sidebar ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#sidebar li {
-  padding: 10px 0;
-}
-
-#sidebar a {
-  display: block;
-  padding: 10px;
-  font-size: 1.2em;
-  color: #333;
-  text-decoration: none;
-}
-
-#sidebar a:hover {
-  background-color: #555;
-  color: #f1f1f1;
-}
-#nav-toggle {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 9999;
-  transition: left 0.5s ease-in-out;
-}
-
-#nav-toggle span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  margin-bottom: 4px;
-  position: relative;
-  background: #333;
-  border-radius: 2px;
-  z-index: 1;
-}
-
-#nav-toggle span:last-child {
-  margin-bottom: 0;
-}
-
-#nav-toggle.open span:nth-child(1) {
-  transform: rotate(-45deg) translate(-4px, 4px);
-}
-
-#nav-toggle.open span:nth-child(2) {
+  left:-100%;
+  height: 100vh;
+  width: 200%;
   opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background-color: rgba(0,0,0,0.3);
 }
-
-#nav-toggle.open span:nth-child(3) {
-  transform: rotate(45deg) translate(-4px, -4px);
-}
-#nav-toggle.open {
-  left: 250px;
-}
-#sidebar.open {
-  left: 0;
+nav.open ~ .overlay{
+  opacity: 1;
+  left:260px;
+  pointer-events: auto;
 }

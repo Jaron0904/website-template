@@ -12,8 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Delicious Handrawn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Delicious Handrawn" rel="stylesheet">
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     
 </head>
 <body>
@@ -23,32 +24,71 @@
             <div class="dropdown-content">
                 <a href="IPC-201c.html">IPC-201c</a>
                 <a href="Whistle life.html">Whistle life</a>
-            </div>
+            </div>        
+            
         </div>
         <a href="foto's.html">Foto's</a>  
         <a href="robot.html">Robot</a> 
+        <nav>
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i> 
+            </div>
+                <div class="sidebar">
+                    <div class="logo">
+                        <i class="bx bx-menu menu-icon"></i> 
+                    </div>
+                    
+                    <div class="sidebar-content">
+                        <ul class="lists">
+                            <li class="list">
+                            <a href="#over mij" class="nav-link">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="link">Over mij</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#projecten" class="nav-link">
+                                <i class='bx bx-hard-hat' ></i>
+                                <span class="link">Mijn projecten</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#CV" class="nav-link">
+                                <i class='bx bxs-home'></i>
+                                <span class="link">Curriculum Vitae</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+        </nav>
+        <section class="overlay"></section>
+        <script>
+            const navBar=document.querySelector("nav"),
+                  menuBtns=document.querySelectorAll(".menu-icon"),
+                  overlay=document.querySelector(".overlay");
+            
+            menuBtns.forEach(menuBtn =>{
+            menuBtn.addEventListener("click", () => {
+                navBar.classList.toggle("open");
+            });
+            });
+            overlay.addEventListener("click", () => {
+                navBar.classList.remove("open");
+            });
+        </script>
     </div>
+    
 
     <div class="header">
         <h1>Jaron Igodt</h1>
         <p>Portfolio website</p>
     </div>
-    <div id="sidebar">
-        <div id="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        <ul>
-          <li><a href="#projecten">Mijn projecten</a></li>
-          <li><a href="#CV">Curriculum Vitae</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <script src="javascript/sidebar.js"></script>  
+
+    
     <div class="row">
         <div class="side">
-            <h2>Over mij</h2>
+            <h2 id="over mij">Over mij</h2>
             <img src="fotos/BIO.png" alt="BIO" width="170" height="170">
             <h3>Wie ben ik</h3>
             <p>Ik ben Jaron Igodt en ben student aan de Universiteit van Gent campus Kortrijk. Hier studeer ik Industrieel Ontwerpen. 
@@ -115,7 +155,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Leeftijd:</strong> <span>19</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Leeftijd:</strong> <span>20</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Studie:</strong> <span>Industrieel ontwerpen</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>Jaron.Igodt@Ugent.be</span></li>
               </ul>

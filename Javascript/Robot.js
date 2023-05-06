@@ -1,132 +1,91 @@
-let y = 625; // Y-positie van de robot
-let jumping=false;
-let img;
-let myFont;
-
-
-function preload(){
-
-  background=loadImage('fotos/background.avif')
-
-}
-function setup() {
-  createCanvas(windowWidth-20, windowHeight);
-    background.resize(windowWidth,windowHeight);
-  myFont=loadFont("Strato-linked.ttf")
-  
-}
-function draw() {
-  image(background,0,0);
-  fill(100,255,255)
-  textFont("Roboto")
-  textSize(50);
-  text("Make him angry",(windowWidth/2)-150,120);
-  if((mouseIsPressed)&&(mouseY>windowHeight-160)&&(mouseY<windowHeight-140)){
-    drawRobot(200,y);
-    pijnindeballen();
-  }
-
-  else if (!jumping) {
-    x=mouseX;
-    push();
-    drawRobot(x, y);
-    fill(150);
-    circle(x-14, y-193, 15);
-    circle(x+14, y-193, 15);
-    pop();
-  } else {
-    image(background,0,0);    
-    fill(100,255,255)
-    textFont("Roboto")
-    textSize(50);
-    text("Make him angry",(windowWidth/2)-150,120);
-  }
-}
-function drawRobot(x, y) {
-  x=mouseX;
-  ellipse(x-80, y-120, 25, 30);
-  ellipse(x+80, y-120, 25, 30);
-  ellipse(x-68, y-120, 25, 40);
-  ellipse(x+68, y-120, 25, 40);
-  ellipse(x-60, y-120, 25, 50);
-  ellipse(x+60, y-120, 25, 50);
-  ellipse(x-52, y-120, 25, 50);
-  ellipse(x+52, y-120, 25, 50);
-  
-  //linkerbeen
-  ellipse(x-30, y+20, 45, 30);
-  ellipse(x-30, y+10, 53, 20);
-  ellipse(x-30, y, 53, 20);
-  ellipse(x-30, y-10, 55, 20);
-  ellipse(x-30, y-20, 60, 20);
-  ellipse(x-30, y-30, 65, 20);
-  ellipse(x-30, y-40, 70, 20);
-  
-  //rechterbeen
-  ellipse(x+24, y+20, 45, 30);
-  ellipse(x+24, y+10, 53, 20);
-  ellipse(x+24, y, 53, 20);
-  ellipse(x+24, y-10, 55, 20);
-  ellipse(x+24, y-20, 60, 20);
-  ellipse(x+25, y-30, 65, 20);
-  ellipse(x+26, y-40, 70, 20);
- 
-  //lichaam 
-  ellipse(x, y-60, 125, 60);
-  ellipse(x, y-85, 130, 65);
-  ellipse(x, y-110, 125, 60);
-  ellipse(x, y-135, 100, 50);
-  
-  //hoofd
-  circle(x, y-185, 75);
-  push();
-  fill(150);
-  ellipse(x, y-170, 50, 10);
-  pop();
-}
-function mousePressed(){
-  if((mouseY>windowHeight-160)&&(mouseY<windowHeight-140)){
-   pijnindeballen();
-  }
-  else{
-    x=mouseX;
-    y=625;
-    jump();
+class Robot {
+  constructor(x,y,size,color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.velocity = 0;
+    this.isOnGround = true;
+    this.color=color;
+    this.obstacleX = width + 50; // startpositie van de obstakel
 
   }
-}
-function pijnindeballen(){
-  x=mouseX
-  push();
-  fill(170,30,35);
-  circle(x,y-185,75);
-  pop();
-  push();
-  fill(10);
-  ellipse(x, y-170, 50, 3);
-  ellipse(x-14,y-193,25,10);
-  ellipse(x+14,y-193,25,10);
-  pop();
-}
-function jump() {
-  jumping=true;
-  let jumpHeight = 300;
-  let jumpTime = 60;
-  let jumpSpeed = jumpHeight / jumpTime;
-  let t = 0;
-  let interval = setInterval(function() {
-    let newY = y + (jumpHeight / 2) * cos((t / jumpTime) * TWO_PI) - jumpHeight / 2;
-    drawRobot(x, newY);
-    push();
-    fill(150);
-    x=mouseX;
-    circle(x-14, newY-193, 15);
-    circle(x+14, newY-193, 15);
-    pop();
-    t++;
-    if (t > jumpTime) {
-      clearInterval(interval);
-      jumping=false
+  
+  jump() {
+    if (this.isOnGround) {
+      this.velocity = -15;
+      this.isOnGround = false;
     }
-  },5); 
+  }
+
+  update() {
+    this.velocity += 0.5;
+    this.y += this.velocity;
+    if (this.y + this.size > height-33) {
+      this.y = height - this.size-33;
+      this.velocity = 0;
+      this.isOnGround = true;
+    }
+    this.x=mouseX;
+    this.obstacleX-=5;
+    if(this.obstacleX<-50){
+      this.obstacleX=width+50;
+    }
+
+  }
+
+  show() {
+    fill(this.color);
+    ellipse((this.x-80)*this.size, (this.y-120)*this.size, 25*this.size, 30*this.size);
+    ellipse((this.x+80)*this.size, (this.y-120)*this.size, 25*this.size, 30*this.size);
+    ellipse((this.x-68)*this.size, (this.y-120)*this.size, 25*this.size, 40*this.size);
+    ellipse((this.x+68)*this.size, (this.y-120)*this.size, 25*this.size, 40*this.size);
+    ellipse((this.x-60)*this.size, (this.y-120)*this.size, 25*this.size, 50*this.size);
+    ellipse((this.x+60)*this.size, (this.y-120)*this.size, 25*this.size, 50*this.size);
+    ellipse((this.x-52)*this.size, (this.y-120)*this.size, 25*this.size, 50*this.size);
+    ellipse((this.x+52)*this.size, (this.y-120)*this.size, 25*this.size, 50*this.size);
+
+    //linkerbeen
+    ellipse((this.x-30)*this.size, (this.y+20)*this.size, 45*this.size, 30*this.size);
+    ellipse((this.x-30)*this.size, (this.y+10)*this.size, 53*this.size, 20*this.size);
+    ellipse((this.x-30)*this.size, (this.y)*this.size, 53*this.size, 20*this.size);
+    ellipse((this.x-30)*this.size, (this.y-10)*this.size, 55*this.size, 20*this.size);
+    ellipse((this.x-30)*this.size, (this.y-20)*this.size, 60*this.size, 20*this.size);
+    ellipse((this.x-30)*this.size, (this.y-30)*this.size, 65*this.size, 20*this.size);
+    ellipse((this.x-30)*this.size, (this.y-40)*this.size, 70*this.size, 20*this.size);
+
+    //rechterbeen
+    ellipse((this.x+24)*this.size, (this.y+20)*this.size, 45*this.size, 30*this.size);
+    ellipse((this.x+24)*this.size, (this.y+10)*this.size, 53*this.size, 20*this.size);
+    ellipse((this.x+24)*this.size, (this.y)*this.size, 53*this.size, 20*this.size);
+    ellipse((this.x+24)*this.size, (this.y-10)*this.size, 55*this.size, 20*this.size);
+    ellipse((this.x+24)*this.size, (this.y-20)*this.size, 60*this.size, 20*this.size);
+    ellipse((this.x+25)*this.size, (this.y-30)*this.size, 65*this.size, 20*this.size);
+    ellipse((this.x+26)*this.size, (this.y-40)*this.size, 70*this.size, 20*this.size);
+
+    //lichaam 
+    ellipse((this.x)*this.size, (this.y-60)*this.size, 125*this.size, 60*this.size);
+    ellipse((this.x)*this.size, (this.y-85)*this.size, 130*this.size, 65*this.size);
+    ellipse((this.x)*this.size, (this.y-110)*this.size, 125*this.size, 60*this.size);
+    ellipse((this.x)*this.size, (this.y-135)*this.size, 100*this.size, 50*this.size);
+
+    //hoofd
+    circle((this.x)*this.size, (this.y-185)*this.size, 75*this.size);
+    push();
+    fill(150);
+    ellipse((this.x)*this.size, (this.y-170)*this.size, 50*this.size, 10*this.size);
+    pop();
+    if (frameCount % 120 < 5 || (frameCount % 120 > 30 && frameCount % 120 < 5)) {    
+      ellipse((this.x-14)*this.size,(this.y-193)*this.size,15*this.size,1*this.size);
+      ellipse((this.x+14)*this.size,(this.y-193)*this.size,15*this.size,1*this.size);
+    }
+    else{
+      fill(150);
+      circle((this.x-14)*this.size, (this.y-193)*this.size,15*this.size);
+      circle((this.x+14)*this.size, (this.y-193)*this.size, 15*this.size);
+    }
+  }
+  stop(){
+      this.isOnGround = true;
+
+  }
 }
