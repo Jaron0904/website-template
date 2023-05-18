@@ -8,21 +8,34 @@
     <link rel="stylesheet" href="css/Whistle life.css">
     <script src="Javascript/Boekje.js" defer></script>
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+    <script src="Javascript/mobile menu.js"></script>
+   
     
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar">
+        <div class="grotenav">
         <a href="index.html">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
             <div class="dropdown-content">
                 <a href="IPC-201c.html">IPC-201c</a>
-                <a href="Whistle life.html">Whistle life</a>
             </div>
         </div>
         <a href="foto's.html">Foto's</a>
         <a href="robot.html">Robot</a>
-    </div>
+        </div>
+        <form>
+            <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
+                <option value=""></option>
+                <option value="index.html">Home</option>
+                <option value="IPC-201c.html">IPC-201c</option>
+                <option value="foto's.html">Foto's</option>
+                <option value="robot.html">Robot</option>
+            </select>
+        </form>
+    </nav>  
+    
     <div class="header">
         <h1>Jaron Igodt</h1>
         <p>Whistle life</p>   
@@ -38,7 +51,7 @@
         
         <h4>Moodboard</h4>
         <p>Om het soort gevoel van de doelgroep te begrijpen werd een moodboard samengesteld.</p>
-        <img src="fotos/moodboard.png" alt="Moodboard" width="650">
+        <img src="fotos/moodboard.png" alt="Moodboard" width="650" id="moodboard">
         <h4>Ideegeneratie</h4>
         <p>Om tot een mooi ogend product te komen werden talloze schetsen getekend en bestudeerd. 
         Tijdens het schetsen kwam het idee om een fluitketel van vroeger te moderniseren. 

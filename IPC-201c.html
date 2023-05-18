@@ -10,8 +10,8 @@
 </head>
 
 <body>
-
-    <div class="navbar">
+    <nav class="navbar">
+        <div class="grotenav">
         <a href="index.html">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
@@ -22,7 +22,16 @@
         <a href="foto's.html">Foto's</a>
         <a href="robot.html">Robot</a>
     </div>
-
+    <form>
+        <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
+            <option value=""></option>
+            <option value="index.html">Home</option>
+            <option value="Whistle life.html">Whistle life</option>
+            <option value="foto's.html">Foto's</option>
+            <option value="robot.html">Robot</option>
+        </select> 
+    </form>
+</nav>
     <div class="header">
         <h1>Jaron Igodt</h1>
         <p>IPC-201C</p>

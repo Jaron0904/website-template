@@ -16,13 +16,15 @@ let achtergrond;
 let geluid;
 let kleinerobot = [];
 let aantal;
+let timeData;
 function preload(){
   //hier moet het inladen van de muziekje komen
   achtergrond=loadImage('bestanden/background.avif');
-  geluid=loadSound('bestanden/sound2.mp4')
+  geluid=loadSound('bestanden/sound5.mp4')
 }
 function setup() {
   createCanvas(windowWidth-1, windowHeight-1);
+  loadJSON('http://worldtimeapi.org/api/ip',gotTimeData);
   robot1 = new Robot(400,550,1,(0,0,255));
   x=100
   for (let i=0; i<8; i++){
@@ -34,8 +36,22 @@ function setup() {
   obstakel1= new Obstakel(400,windowHeight-20,20,20,(239,169,99),1);
   achtergrond.resize(windowWidth,windowHeight);
 }
+function gotTimeData(data){
+  timeData=data;
+}
 function draw() {
   background(achtergrond);
+  if(timeData){
+    let currentTime=new Date(timeData.datetime);
+    let timeString= currentTime.toLocaleTimeString();
+    textSize(24);
+    loadJSON('http://worldtimeapi.org/api/ip',gotTimeData);
+    text('Tijd: '+timeString,width-width/5, 125);
+  }
+  else{
+    textSize(24);
+    text('Loading...',width-width/5,125)
+  }
   if (start==1){
     robot1.show();
     kleinerobot[obstakel1.i].show();

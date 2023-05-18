@@ -20,6 +20,7 @@ body {
   margin: 0;
   z-index: 1;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }  
 
 .navbar a {
@@ -34,24 +35,16 @@ body {
   margin: auto;
 }
 
-/* Right-aligned link */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-    
-  }
-}
-
 /* Change color on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #ddd;
   color: black;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
 /* Change color on active */
 .navbar a:active {
-  background-color: rgb(92, 138, 245);
+  background-color: rgb(69, 70, 75);
   color: black;
 }
 
@@ -251,13 +244,8 @@ i {
   font-size: 40px;
   margin-top: 40vh;
 }
-#schetsen{
-  max-width: 24%;
-}
-#renders{
-  max-width: 33%;
-  margin: 0px;
-}
+
+
 h4{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -288,3 +276,61 @@ h2{
   width: 50px;
   height: 50px;
 }
+
+.mobile-menu{
+  display: none;
+  background-color: rgba(87, 87, 87, 0.7);
+}
+
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .row {   
+      flex-direction: column;
+    }
+    #moodboard{
+      width:100%;
+    }
+    #schetsen{
+      width:100%;
+    }
+    #renders{
+      width:100%;
+      
+    }
+  }
+
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar{
+      display: block;
+    }
+    .grotenav{
+      display: none;
+    }
+    .mobile-menu{
+      display: block;
+      width:100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #moodboard{
+      width:100%;
+        }
+    #schetsen{
+      width:100%;
+    }
+    #renders{
+      width:100%;
+      
+    }
+  }
+  @media screen and (min-width:700px){
+    #renders{
+      max-width: 33%;
+      margin: 0px;
+    }
+    #schetsen{
+      max-width: 24%;
+    }
+  }

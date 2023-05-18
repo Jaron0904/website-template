@@ -18,20 +18,32 @@
     
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar">
+        <div class="grotenav">
+        
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
             <div class="dropdown-content">
-                <a href="IPC-201c.html">IPC-201c</a>
                 <a href="Whistle life.html">Whistle life</a>
-            </div>        
-            
+                <a href="IPC-201c.html">IPC-201C</a>
+            </div>
         </div>
-        <a href="foto's.html">Foto's</a>  
-        <a href="robot.html">Robot</a> 
-        <nav>
-            <div class="logo">
-                <i class="bx bx-menu menu-icon"></i> 
+        <a href="foto's.html">Foto's</a>
+        <a href="robot.html">Robot</a>
+    </div>
+    <form>
+        <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
+            <option value=""></option>
+            
+            <option value="Whistle life.html">Whistle life</option>
+            <option value="IPC-201c.html">IPC-201c</option>
+            <option value="foto's.html">Foto's</option>
+            <option value="robot.html">Robot</option>
+        </select> 
+    </form>
+    <nav>
+    <div class="logo">
+        <i class="bx bx-menu menu-icon"></i> 
             </div>
                 <div class="sidebar">
                     <div class="logo">
@@ -77,15 +89,11 @@
                 navBar.classList.remove("open");
             });
         </script>
-    </div>
-    
-
+    </nav>
     <div class="header">
         <h1>Jaron Igodt</h1>
         <p>Portfolio website</p>
     </div>
-
-    
     <div class="row">
         <div class="side">
             <h2 id="over mij">Over mij</h2>
@@ -143,7 +151,7 @@
          </div>
          <div class="CV">
         <h2 id="CV">Curriculum Vitae</h2>
-        <p>Download <a href="Curriculum-Vitae-Jaron-Igodt.pdf">hier </a>mijn Curriculum Vitae.</p>
+        <p>Download <a href="bestanden/Curriculum-Vitae-Jaron-Igodt.pdf">hier </a>mijn Curriculum Vitae.</p>
         <h4 style="text-decoration: underline;">Persoonlijke gegevens</h4>
         <div class="row">
             <div class="col-lg-6 col-md-12">
