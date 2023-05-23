@@ -6,7 +6,7 @@ class Robot {
     this.velocity = 0;
     this.isOnGround = true;
     this.color=color;
-    this.obstacleX = width + 50; // startpositie van de obstakel
+    // this.obstacleX = width + 50; // startpositie van de obstakel
 
   }
   
@@ -26,10 +26,10 @@ class Robot {
       this.isOnGround = true;
     }
     this.x=mouseX;
-    this.obstacleX-=5;
-    if(this.obstacleX<-50){
-      this.obstacleX=width+50;
-    }
+    // this.obstacleX-=5;
+    // if(this.obstacleX<-50){
+    //   this.obstacleX=width+50;
+    // }
 
   }
 

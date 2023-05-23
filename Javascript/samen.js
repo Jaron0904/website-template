@@ -1,52 +1,49 @@
-function checkCollision(robot1, obstacle1) {
-  if (robot1.y + robot1.size > height - 33 - obstakel1.ygrootte && 
-    robot1.x - 55 * robot1.size < obstakel1.x + obstakel1.xgrootte && robot1.x + 55 * robot1.size > obstakel1.x) {
-    obstakel1.stop();
-    robot1.stop();
-    robot1.velocity = 0;
-    robot1.isOnGround = true;
-    robot1.y = height - robot1.size - 33 - obstakel1.ygrootte;
+function checkCollision(robot, obstakel) {
+  if (robot.y + robot.size > height - 33 - obstakel.ygrootte && 
+    robot.x - 55 * robot.size < obstakel.x + obstakel.xgrootte && robot.x + 55 * robot.size > obstakel.x) {
+    obstakel.stop();
+    robot.stop();
+    robot.velocity = 0;
+    robot.isOnGround = true;
+    robot.y = height - robot.size - 33 - obstakel.ygrootte;
   }
 }
+
+let wachten=3000;
 let obstakel1;
+let obstakel2;
 let robot1;
-let kleinerobot1;
-let kleinerobot2;
+let statusgeluid2=0;
 let start=0;
 let achtergrond;
 let geluid;
-let kleinerobot = [];
+
 let aantal;
 let timeData;
 function preload(){
-  //hier moet het inladen van de muziekje komen
   achtergrond=loadImage('bestanden/background.avif');
-  geluid=loadSound('bestanden/sound5.mp4')
+  geluid1=loadSound('bestanden/sound5.mp4')
+  geluid2=loadSound('bestanden/ough1.mp4')
+
 }
 function setup() {
   createCanvas(windowWidth-1, windowHeight-1);
   loadJSON('https://worldtimeapi.org/api/ip',gotTimeData);
   robot1 = new Robot(400,550,1,(0,0,255));
   x=100
-  for (let i=0; i<8; i++){
-    x+=200;
-    kleinerobot.push(new Robot(x,650,0.3,(0,0,255)));
-  }
-  //kleinerobot1= new Robot(100,250,0.3,(234,182,118))
-  //kleinerobot2= new Robot(300,250,0.3,(239,169,99))
+
   obstakel1= new Obstakel(400,windowHeight-20,20,20,(239,169,99),1);
+  obstakel2= new Obstakel(400,windowHeight-30,20,30,(239,169,99),1);
   achtergrond.resize(windowWidth,windowHeight);
 }
-function gotTimeData(data){
-  timeData=data;
-}
+
 function draw() {
   background(achtergrond);
   if(timeData){
-    let currentTime=new Date(timeData.datetime);
-    let timeString= currentTime.toLocaleTimeString();
+    let tijdstip=new Date(timeData.datetime);
+    let timeString= tijdstip.toLocaleTimeString();
     textSize(24);
-    loadJSON('http://worldtimeapi.org/api/ip',gotTimeData);
+    loadJSON('https://worldtimeapi.org/api/ip',gotTimeData);
     text('Tijd: '+timeString,width-width/5, 125);
   }
   else{
@@ -55,16 +52,26 @@ function draw() {
   }
   if (start==1){
     robot1.show();
-    kleinerobot[obstakel1.i].show();
-    //kleinerobot1.show();
-    //kleinerobot2.show();
+  
     robot1.update();
     obstakel1.show();
-    obstakel1.move();
-    //rect(mouseX-60,windowHeight-240,120,240);
+    (obstakel1.move(),wachten);
+    obstakel2.show();
+    obstakel2.move();
     checkCollision(robot1, obstakel1);
+    checkCollision(robot1,obstakel2);
+    textSize(50);
+    text("Level "+obstakel1.level,(windowWidth/2)-100,120);
   }
   else if (start==2){
+    if (statusgeluid2==0){
+      if(geluid1.isPlaying()){
+        geluid1.stop();
+      }
+      geluid2.play();
+      statusgeluid2=1;
+    }
+    
     fill(107,107,107);
     rect((windowWidth/2)-300,200,600,300);
     fill(255,255,255); 
@@ -84,23 +91,26 @@ function draw() {
     text("Press the left mouse button to jump",(windowWidth/2)-395,475);
   }
 }
+function gotTimeData(data){
+  timeData=data;
+}
 function mousePressed() {
   robot1.jump();
   if (start==1){
-  if(geluid.isPlaying()){
+  if(geluid1.isPlaying()){
 }
 else{
-  geluid.play();
+  geluid1.play();
 }
 }
 }
 function keyPressed() {
   if (key === ' ') {
-    if (start==0){
+    if ((start==0)||(start==2)){
     obstakel1.reset();
+    obstakel2.reset();
+    statusgeluid2=0;
     }
-    else if(start==2){
-      obstakel1.reset();
-    }
+   
   }
 }

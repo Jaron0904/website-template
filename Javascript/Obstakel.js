@@ -12,8 +12,7 @@ class Obstakel{
     }
     move(){
       this.x+=this.obstakelsnelheid;
-      textSize(50);
-      text("Level "+this.level,(windowWidth/2)-100,120)
+      
       if(this.isStopped==false){
       if(this.x>width){
         if(this.ygrootte>120){
@@ -38,7 +37,7 @@ class Obstakel{
     show(){
       fill(this.obstakelkleur);
       rect(this.x,this.y,this.xgrootte,this.ygrootte);
-    }
+    }  
     stop(){
       start=2;
       this.color='grey'
