@@ -10,47 +10,57 @@
 </head>
 
 <body>
-
-    <div class="navbar">
-      <a href="index.html">Home</a> 
-        <div class="dropdown">
-          <button class="dropbtn">Portfolio</button>
-          <div class="dropdown-content">
-              <a href="IPC-201c.html">IPC-201c</a>
-              <a href="Whistle life.html">Whistle life</a>
-          </div>
-      </div>
-      <a href="robot.html">Robot</a>
+  <nav class="navbar">
+    <div class="grotenav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Portfolio</button>
+        <div class="dropdown-content">
+            <a href="Whistle life.html">Whistle life</a>
+            <a href="IPC-201c.html">IPC-201c</a>
+        </div>
     </div>
+    <a href="foto's.html" id="Statuswebsite">Foto's</a>
+    <a href="robot.html">Robot</a>
+</div>
+<form>
+    <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
+        <option value=""></option>
+        <option value="index.html">Home</option>
+        <option value="Whistle life.html">Whistle life</option>
+        <option value="IPC-201c.html">IPC-201c</option>
+        <option value="foto's.html" id="Statuswebsite">Foto's</option>
+        <option value="robot.html">Robot</option>
+    </select> 
+</form>
+</nav>
     <div class="header">
         <h1>Jaron Igodt</h1>
-        <p>Klik op de afbeelding om deze te vergroten</p>
+        <p>Foto's</p>
     </div>
     <div class="fotos">
     <div class="row" style="text-align: center;" >
         <div class="column">
-          <img src="fotos/Igodt_Jaron_Context.jpg" alt="Context render" class="fotosH">
-          <img src="fotos/Igodt_Jaron_Detailrender.jpg" alt="Detailrender" class="fotosH">
-          <img src="fotos/paraplu schets.jpeg" alt="Paraplu schets" class="fotosV">
-          <img src="fotos/Cornell_Box_Jaron_Igodt.1.jpg" alt="Cornellbox" class="fotosH">
-          
-          
+          <img src="fotos/Igodt_Jaron_Context.jpg" alt="Context render">
+          <img src="fotos/Igodt_Jaron_Detailrender.jpg" alt="Detailrender">
+          <img src="fotos/paraplu schets.jpeg" alt="Paraplu schets">
+          <img src="fotos/Cornell_Box_Jaron_Igodt.1.jpg" alt="Cornellbox">
         </div>
         <div class="column">
-          <img src="fotos/IPC-200.jpg" alt="IPC-200" class="fotosH">
-          <img src="fotos/waterkoker_infini.png" alt="Infini render" class="fotosH">
-          <img src="fotos/Opmetingsschets.jpeg" alt="Opmetingsschets Bureaulamp" class="fotosH">
-          <img src="fotos/Waterkoker schets.jpeg" alt="Schets waterkoker" class="fotosV">
+          <img src="fotos/IPC-200.jpg" alt="IPC-200">
+          <img src="fotos/waterkoker_infini.png" alt="Infini render">
+          <img src="fotos/Opmetingsschets.jpeg" alt="Opmetingsschets Bureaulamp">
+          <img src="fotos/Waterkoker schets.jpeg" alt="Schets waterkoker">
         </div>
         <div class="column">
-          <img src="fotos/Igodt_Jaron_Wireframe.png" alt="Wireframe render" class="fotosH">
-          <img src="fotos/möbius band.jpeg" alt="Schets möbiusband" class="fotosV">
-          <img src="fotos/strijkijzer schets.jpeg" alt="Schets strijkijzer" class="fotosV">
+          <img src="fotos/Igodt_Jaron_Wireframe.png" alt="Wireframe render">
+          <img src="fotos/möbius band.jpeg" alt="Schets möbiusband">
+          <img src="fotos/strijkijzer schets.jpeg" alt="Schets strijkijzer">
         </div>
         <div class="column">
-         <img src="fotos/bril schets.jpeg" alt="Schets bril" class="fotosV">
-         <img src="fotos/maatbeker.jpeg" alt="Schets maatbeker" class="fotosV">
-         <img src="fotos/schets doos.jpeg" alt="Schets doos" class="fotosH">   
+         <img src="fotos/bril schets.jpeg" alt="Schets bril">
+         <img src="fotos/maatbeker.jpeg" alt="Schets maatbeker">
+         <img src="fotos/schets doos.jpeg" alt="Schets doos">   
       </div>
     </div>
     </div>

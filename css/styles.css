@@ -1,60 +1,35 @@
 * {
     box-sizing: border-box;
   }
-
-  img.fotosH:active{
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.5);
-    z-index: 1;
-    
-  }
-
-  @media (min-width: 1000px) {
-    .col-lg-6 {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-  }
-  img.fotosV:active{
-    position:fixed;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%,-50%) scale(0.35);
-    
-  }
-
   /* Style the body */
   body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+    margin: 0; 
     
   }
+  /*Achtergrond bij de delen GIP en CV op de home pagina en ervoor zorgen dat de tekst niet tegen de rand plakt*/
   .GIP,.CV{
     background-color: #f1f1f1;
     padding: 30px;
   }
+  /*Zelfde als bij GIP en CV maar dan zorgen voor witte achtergrond*/
   .piano,.whistle{
     padding: 30px;
   }
   /* Header/logo Title */
   .header {
-    height: 100vh;
-    padding: 50px;
+    height: 50vh; /*Dit zorgt ervoor dat op eender welk scherm telkens de helft bedekt is door een vlak*/
+    padding: 50px; /*Zonder dit is er een wit vlak boven de header en navbar, is ook om de tekst in de header op een bepaalde hoogte te zetten*/
     text-align: center;
     background: #232741;
     color: white;
-   
   }
   
 /*Lettertypes*/
-
-  .header h1 {
+  .header h1 { /*Enkel de tekst die aangegeven werd met h1 in de header wordt met deze instellingen aangepast*/
     font-size: 50px;
     text-align: center;
-    margin-top:40vh;
+    margin-top:10vh;
   }
 h4{
   margin-top: 10px;
@@ -67,65 +42,67 @@ h3{
   margin: 0px;
 }
 /*Einde lettertypes*/
+
+/*Opmaak links */
 a:link {
   color: #717171;
   background-color: transparent;
   text-decoration: none;
-  
 }
+
 a:visited {
   color: #717171;
   background-color: transparent;
   text-decoration: none;
 }
+
 a:hover {
   color: rgb(0, 0, 0);
   background-color: transparent;
-
 }
- 
+/*Einde opmaak links */ 
+
   /*Navigatie bar*/
   /*Navigatie bar*/
   /*Navigatie bar*/
   .navbar {
-    overflow:-moz-hidden-unscrollable;
-    background-color: rgba(87, 87, 87, 0.7);
+    background-color: rgb(87, 87, 87);
     font-family: Arial;
-    position: fixed; 
-    width: 100%;
+    position: fixed; /*Zorgt ervoor dat de navbar bovenaan het scherm blijft staan ook terwijl het scrollen*/
+    width: 100%; /*Over de volledige breedte van het scherm*/
     margin:0;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /*Zorgt voor een meer geleidelijke overgang*/
+    z-index: 1; /*navbar wordt bovenop de andere delen weergegeven tenzij het andere deel een z-index heeft van 2 of meer*/
   }
   
   .navbar a {
     display: inline-block;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
+    /*justify-content: center;*/
+    font-size: 20px;
     color: white;
-    text-align: center;
+    /*text-align: center;*/
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration:none;
     margin: auto;
   }
-  .navbar a:hover, .dropdown:hover .dropbtn {
+  .navbar a:hover, .dropdown:hover .dropbtn { /*Als er over de tekstvakken in de navbar wordt gezweven zal de achtergrond kleur veranderen naar vuil wit en zal de tekstkleur veranderen naar zwart*/
     background-color: #ddd;
     color: black;
     box-shadow: 0 0 6px rgba(0,0,0,0.4);
   }  
-  .navbar a:active {
+  .navbar a:active { /*Wordt er op het tekstvak gedrukt zal de achtergrond kleur en tekstkleur veranderen*/ 
     background-color: rgb(69,70,75);
     color: black;
   }
-  .dropdown {
-  text-align: center;
+  .dropdown { /*Zorgt voor de dropdown bij portfolio*/
+  /*text-align: center;*/
   display: inline-block;
   overflow:visible;
   }
   /* Dropdown button */
   .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     outline: none;
     color: white;
@@ -139,10 +116,9 @@ a:hover {
   display: none;
   position: absolute;
   background: #f9f9f9;
-  min-width: 160px;
+  min-width: 20px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  
+  z-index: 1; /*Zorgt dat het boven al de rest wordt getoond*/
 }
 /* Links inside the dropdown */
 .dropdown-content a {
@@ -154,29 +130,21 @@ a:hover {
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-
   /*Einde navigatie bar*/
   /*Einde navigatie bar*/
   /*Einde navigatie bar*/
 
  
-
   /* Column container */
-  .row {  
-    display: -ms-flexbox; /* IE10 */
+  /* .row {  
+    display: -ms-flexbox; 
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
+    -ms-flex-wrap: wrap; 
     flex-wrap: wrap;
-  }
+  } */
   
   /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
@@ -185,6 +153,7 @@ a:hover {
     flex: 30%;
     background-color: #f1f1f1;
     padding: 20px;
+
   }
   /* Main column */
   .main {   
@@ -193,50 +162,53 @@ a:hover {
     background-color: white;
     padding: 0px;
   }
-  /* Footer */
+  /* opmaak van de Footer */
   .footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
-    
+  }
+  .logos{ /*Opmaak logo's in footer*/
+    width: 50px;
+    height: 50px;
   }
 
-
-.body{
+.body{ /*Zorgt ervoor dat de tekst niet tegen de rand plakt*/
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
 }
 
-.row {
+.row { /*Opmaak van de rijen bij Curriculum Vitae*/
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+/*Bij pagina foto's zodat 4 foto's naast elkaar geplaatst kunnen worden*/
 .column {
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
 }
-
+/*Bij pagina foto's zodat 4 foto's naast elkaar geplaatst kunnen worden*/
 .column img {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
 }
 
-
-.contact{
+.contact{ /*contact stuk op home pagina*/
   padding-left: 30px;
   padding-top: 10px;
+  text-align: center;
+margin-top: 15px;
 }
 
-i {
+/* i {
   font-size: 50px;
   color: gray;
-}
+} */
 
 .invulbalk{
   border-radius: 10px;
@@ -245,19 +217,16 @@ i {
   padding: 5px;
 }
 
-.contact{
-text-align: center;
-margin-top: 15px;
-}
-.tabel{
+.tabel{ /*Positie van de invulbalken*/
   margin-left: auto;
   margin-right: auto;
   text-align:justify;
 }
-textarea{
+textarea{ /*Opmaak tekstvak "stel je vraag"*/
   margin-left: 50%;
   margin-right: auto;
-}
+  height: 100px;
+} 
 
 /*Verstuur knop*/
 /*Verstuur knop*/
@@ -265,21 +234,23 @@ textarea{
 .button { 
   height: 50px; 
   width: 100px; 
-  margin-right: 50%;
   border: none;
-  margin-left: 50%;
   color:#f1f1f1;
   background-color: #232741;
   border-radius: 10%;
-  } 
-.button:hover{
-  background-color: #199f84;
-}
-#verstuur{
   margin-left: 32%;
   margin-right: 68%;
   margin-bottom: 62px;
+  } 
+.button:hover{ /*Wanneer met de muis hierover gegaan wordt zal achtergrond kleur veranderen*/
+  background-color: #199f84;
 }
+/* #verstuur{
+  margin-left: 32%;
+  margin-right: 68%;
+  margin-bottom: 62px;
+} */
+
 /*Einde verstuur knop*/
 /*Einde verstuur knop*/
 /*Einde verstuur knop*/
@@ -287,51 +258,37 @@ textarea{
 /* Opmaak foto's*/
 /* Opmaak foto's*/
 /* Opmaak foto's*/
-#IPC{
+#IPC{ /*Opmaak foto op pagina "IPC-201c"*/
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
-#schetsen{
- max-width: 24%;
-}
-#renders{
-  max-width: 33%;
-  margin: 0px;
-}
-.logos{
-  width: 50px;
-  height: 50px;
-}
-.fotos{
-  cursor:pointer;
-}
-/*Einde Opmaak foto's*/
-/*Einde Opmaak foto's*/
-/*Einde Opmaak foto's*/
-canvas {
-  display: block;
+
+#GIPfoto{
+  width:400px; 
+  height:300px;
 }
 
+/*Einde Opmaak foto's*/
+/*Einde Opmaak foto's*/
+/*Einde Opmaak foto's*/
 
+/*Opmaak sidebar*/
 nav .logo{
   display:flex;
   position:fixed;
   top:4px;
   align-items: center;
-  
- 
 }
+
 .logo .menu-icon{
   color:rgb(221, 221, 221);
   cursor: pointer;
   font-size: 40px;
   margin-right: 15px;
-  
   position: fixed;
   top:4px;
-
 }
 
 nav .sidebar{
@@ -344,47 +301,49 @@ nav .sidebar{
   opacity: 100%;
   background-color: #fff;
   box-shadow: 0 5px 1px rgba(0,0,0,0.1);
-  transition: all 0.4s ease;
+  transition: all 0.4s ease; /*overgang verloopt wat natuurlijker hierdoor*/
 }
+
 nav.open .sidebar{
   left: 0;
 }
+
 .sidebar .sidebar-content{
   display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding:30px 16px;
+  padding:30px 16px; 
 }
+
 .sidebar-content .list{
   list-style: none;
-  
 }
 
 .list .nav-link {
   display: flex;
+  text-align: left;
   align-items:center;
   text-decoration: none;
   border-radius: 8px;
-  padding: 14px 12px;
-  
 }
+
 .lists .nav-link:hover{
   background-color: #199f84;
 }
 
 .nav-link .icon{
   margin-right: 5px;
-  font: size 5px;
+  font-size:  30px;
   color: #707070;
-  
 }
+
 .nav-link .link{
   font-size: 16px;
   color: #707070;
   font-weight: 400;
-  
 }
+
 .lists .nav-link:hover .icon,
 .lists .nav-link:hover .link{
   color:#c0b5b5;
@@ -400,25 +359,181 @@ nav.open .sidebar{
   transition: all 0.4s ease;
   background-color: rgba(0,0,0,0.3);
 }
+
 nav.open ~ .overlay{
   opacity: 1;
   left:260px;
   pointer-events: auto;
 }
-.mobile-menu{
+
+.link{
+  text-align: left;
+}
+
+.mobile-menu{ /*Als de website op een gsm scherm wordt bekeken zal de navbar met een dropdown gebeuren, hier wordt er gezet dat het het nog niet moet tonen*/
   display: none;
   background-color: rgba(87, 87, 87, 0.7);
+}
+
+#Statuswebsite{ /*Dit dient om de balk in de navbar te laten verkleuren wanneer men op de pagina zit (beter kunnen situeren van waar ze zitten)*/
+  background-color:rgb(39, 39, 42);
+  color:white;
+}
+.Productboekje{
+  background-color: #d5d5d5;
+  padding: 30px;
+}
+
+
+
+  /*Proces bundel weergave*/
+  .boekje{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#d5d5d5;
+}
+
+.boekje {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 40%;
+    transition: transform 0.8s;
+}
+
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 3000px;
+}
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    
+}
+.back {
+    z-index: 0;
+}
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+#buttonrechts {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-left: 12%;
+  transition: transform 1s;
+}
+#buttonlinks {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-right: 12%;
+  transition: transform 1s;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 0;
+}
+
+#p2 {
+    z-index: -1;
+}
+
+#p3 {
+    z-index: -2;
+}
+#p4{
+    z-index: -3;
+}
+#p5{
+    z-index: -4;
+}
+#p6{
+    z-index: -5;
+}
+.main2 {   
+  -ms-flex: 70%; 
+  flex: 70%;
+  background-color: white;
+  padding: 30px;
 }
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 700px) {
     .row {   
       flex-direction: column;
     }
+ 
+    #moodboard{
+      width:100%;
+    }
+    #schetsen{
+      width:100%;
+    }
+    #renders{
+      width:100%;
+      
+    }
   }
 
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 400px) {
-    
     .navbar{
       display: block;
     }
@@ -433,26 +548,58 @@ nav.open ~ .overlay{
     }
     .logo{
       display:none;
+    }
+    #moodboard{
+      width:100%;
+        }
+    #schetsen{
+      width:100%;
+    }
+    #renders{
+      width:100%;
+      
     }  
-
   }
 
 
-  @media screen and (min-width:400px) {
-   
-  }
   /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
     max-width: 50%;
   }
+  .side{
+    width: 100%;
+  }
+  .main{
+    width: 100%;
+  }
+  #GIPfoto{
+    width:80%;
+    height: auto;
+    
+  }
 }
-
+@media screen and (min-width:700px){
+  #renders{
+    max-width: 33%;
+    margin: 0px;
+  }
+  #schetsen{
+    max-width: 24%;
+  }
+}
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
     max-width: 100%;
+  }
+
+}
+@media (min-width: 1000px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }

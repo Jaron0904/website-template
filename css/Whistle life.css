@@ -1,3 +1,5 @@
+/* Dit is een reserve css pagina voor de pagina whistle life, deze styling wordt dus niet rechtstreeks gebruikt */
+
 *{
     box-sizing: border-box;
     
@@ -7,13 +9,10 @@ body {
     margin: 0;
   }
 
-
-
-
 /* navigatie bar*/
 .navbar {
   overflow:-moz-hidden-unscrollable;
-  background-color: rgba(87, 87, 87, 0.7);
+  background-color: rgb(87, 87, 87);
   font-family: Arial;
   position: fixed;
   width: 100%;
@@ -27,7 +26,7 @@ body {
   display: inline-block;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -57,7 +56,7 @@ body {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   outline: none;
   color: white;
@@ -234,15 +233,18 @@ i {
 
 /* Opmaak*/
 .header {
-  height: 100vh;
+  height: 50vh;
   padding: 50px;
   text-align: center;
   background: #232741;
   color: white;
 }
 .header h1 {
-  font-size: 40px;
-  margin-top: 40vh;
+  font-size: 50px;
+  margin-top: 10vh;
+}
+.header p{
+  font-size: 16px;
 }
 
 
@@ -251,12 +253,10 @@ h4{
   margin-bottom: 10px;
   position: left;
 }
-h1{
+h1,h2{
   margin-top: 0px;
 }
-h2{
-  margin-top: 0px;
-}  
+
 .main {   
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
@@ -334,3 +334,7 @@ h2{
       max-width: 24%;
     }
   }
+#Statuswebsite{
+  background-color:rgb(39, 39, 42);
+  color:white;
+}

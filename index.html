@@ -20,7 +20,7 @@
 <body>
     <nav class="navbar">
         <div class="grotenav">
-        
+            <a href="index.html" id="Statuswebsite">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
             <div class="dropdown-content">
@@ -34,7 +34,7 @@
     <form>
         <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
             <option value=""></option>
-            
+            <option value="index.html" id="Statuswebsite">Home</option>
             <option value="Whistle life.html">Whistle life</option>
             <option value="IPC-201c.html">IPC-201c</option>
             <option value="foto's.html">Foto's</option>
@@ -54,20 +54,26 @@
                         <ul class="lists">
                             <li class="list">
                             <a href="#over mij" class="nav-link">
-                                <i class='bx bx-home-alt icon'></i>
-                                <span class="link">Over mij</span>
+                            <i class='bx bx-home-alt-2 icon'></i>
+                            <span class="link">Over mij</span>
                             </a>
                         </li>
                         <li class="list">
                             <a href="#projecten" class="nav-link">
-                                <i class='bx bx-hard-hat' ></i>
-                                <span class="link">Mijn projecten</span>
+                            <i class='bx bx-hard-hat icon'></i>   
+                            <span class="link">Mijn projecten</span>
                             </a>
                         </li>
                         <li class="list">
                             <a href="#CV" class="nav-link">
-                                <i class='bx bxs-home'></i>
-                                <span class="link">Curriculum Vitae</span>
+                            <i class='bx bx-file-blank icon'></i>   
+                            <span class="link">Curriculum Vitae</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#contact" class="nav-link">
+                            <i class='bx bx-message icon'></i> 
+                            <span class="link">Contact</span>
                             </a>
                         </li>
                     </ul>
@@ -129,7 +135,7 @@
             <div class="GIP">
             <a href="IPC-201c.html"><h2>IPC-201c</h2></a>
             <h5>Geintegreerde proef, 2020</h5>
-            <img src="fotos/GIP.png" alt="Geïntegreerde proef" width="400" height="300">
+            <img src="fotos/GIP.png" alt="Geïntegreerde proef" id="GIPfoto">
             <h4>Wat is het?</h4>
             <p>Voor ons eindwerk hadden we de opdracht gekregen om het systeem helemaal te onderzoeken en terug werkende te krijgen. 
                 Het vatensysteem is een miniatuur fabriekje dat ontworpen is door SMC in Spanje om mensen te leren werken met industriële processen. In het systeem kunnen er verschillende foutmeldingen gegenereerd worden die de gebruiker van het systeem moet oplossen. 

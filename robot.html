@@ -11,17 +11,30 @@
 <meta charset="utf-8" />
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a> 
+    <nav class="navbar">
+        <div class="grotenav">
+        <a href="index.html">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Portfolio</button>
             <div class="dropdown-content">
-                <a href="IPC-201c.html">IPC-201c</a>
                 <a href="Whistle life.html">Whistle life</a>
+                <a href="IPC-201c.html">IPC-201c</a>
             </div>
         </div>
-        <a href="foto's.html">Foto's</a>   
+        <a href="foto's.html">Foto's</a>
+        <a href="robot.html" id="Statuswebsite">Robot</a>
     </div>
+    <form>
+        <select id="mobile-menu" class="mobile-menu" onChange="window.location.href=this.options[selectedIndex].value">
+            <option value=""></option>
+            <option value="index.html">Home</option>
+            <option value="Whistle life.html">Whistle life</option>
+            <option value="IPC-201c.html">IPC-201c</option>
+            <option value="foto's.html">Foto's</option>
+            <option value="robot.html" id="Statuswebsite">Robot</option>
+        </select> 
+    </form>
+</nav>
   <script language="javascript" type="text/javascript" src="Javascript/samen.js"></script>
   <script language="javascript" type="text/javascript" src="Javascript/Obstakel.js"></script>
   <script language="javascript" type="text/javascript" src="Javascript/Robot.js"></script>

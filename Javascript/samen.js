@@ -1,5 +1,6 @@
 function checkCollision(robot1, obstacle1) {
-  if (robot1.y + robot1.size > height - 33 - obstakel1.ygrootte && robot1.x - 55 * robot1.size < obstakel1.x + obstakel1.xgrootte && robot1.x + 55 * robot1.size > obstakel1.x) {
+  if (robot1.y + robot1.size > height - 33 - obstakel1.ygrootte && 
+    robot1.x - 55 * robot1.size < obstakel1.x + obstakel1.xgrootte && robot1.x + 55 * robot1.size > obstakel1.x) {
     obstakel1.stop();
     robot1.stop();
     robot1.velocity = 0;
@@ -24,7 +25,7 @@ function preload(){
 }
 function setup() {
   createCanvas(windowWidth-1, windowHeight-1);
-  loadJSON('http://worldtimeapi.org/api/ip',gotTimeData);
+  loadJSON('https://worldtimeapi.org/api/ip',gotTimeData);
   robot1 = new Robot(400,550,1,(0,0,255));
   x=100
   for (let i=0; i<8; i++){
