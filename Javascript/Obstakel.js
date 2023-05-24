@@ -45,12 +45,10 @@ class Obstakel{
     reset(){
       start=1;
       this.level=1;
-      obstakel1.show();
-      obstakel1.move();
       this.ygrootte=20;
       this.xgrootte=20;
       this.x=0;
       this.y=windowHeight-20;
-      this.i=0;
+
     }
   }

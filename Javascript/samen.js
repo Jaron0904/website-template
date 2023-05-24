@@ -17,7 +17,7 @@ let statusgeluid2=0;
 let start=0;
 let achtergrond;
 let geluid;
-
+let blokjes=[];
 let aantal;
 let timeData;
 function preload(){
@@ -32,8 +32,8 @@ function setup() {
   robot1 = new Robot(400,550,1,(0,0,255));
   x=100
 
-  obstakel1= new Obstakel(400,windowHeight-20,20,20,(239,169,99),1);
-  obstakel2= new Obstakel(400,windowHeight-30,20,30,(239,169,99),1);
+  obstakel1= new Obstakel(400,windowHeight-20,20,20,'red',1);
+  obstakel2= new Obstakel(400,windowHeight-30,20,30,'red',1);
   achtergrond.resize(windowWidth,windowHeight);
 }
 
@@ -60,8 +60,18 @@ function draw() {
     obstakel2.move();
     checkCollision(robot1, obstakel1);
     checkCollision(robot1,obstakel2);
+    
     textSize(50);
+    fill('grey');
     text("Level "+obstakel1.level,(windowWidth/2)-100,120);
+    if (frameCount%500==0){
+      blokjes.push(new Obstakel(0,windowHeight-20,random(10,40),20,'grey',random(2,5)));
+    }
+    for (let i= blokjes.length -1;i>=0; i--){
+      blokjes[i].move();
+      blokjes[i].show();
+    }
+    
   }
   else if (start==2){
     if (statusgeluid2==0){
@@ -80,15 +90,18 @@ function draw() {
     textSize(50);
     text("Press 'space' to restart",(windowWidth/2)-250,375);
     text("Level "+ obstakel1.level,(windowWidth/2)-75,450);
+    
   }
   else{
     fill(107,107,107);
-    rect((windowWidth/2)-400,200,800,300);
+    rect((windowWidth/2)-400,200,800,400);
     fill(255,255,255);
     textSize(50);
+    
     text("Instructions:",(windowWidth/2)-120,275);    
     text("Press 'space' to start",(windowWidth/2)-225,375);
     text("Press the left mouse button to jump",(windowWidth/2)-395,475);
+    text("Don't hit the red blocks",(width/2)-240,575);
   }
 }
 function gotTimeData(data){
@@ -107,10 +120,11 @@ else{
 function keyPressed() {
   if (key === ' ') {
     if ((start==0)||(start==2)){
-    obstakel1.reset();
     obstakel2.reset();
+    obstakel1.reset();
     statusgeluid2=0;
+    blokjes.length=0;
+    
     }
-   
   }
 }
