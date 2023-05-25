@@ -1,4 +1,4 @@
-// References to DOM Elements
+
 const prevBtn = document.querySelector("#buttonlinks");
 const nextBtn = document.querySelector("#buttonrechts");
 const book = document.querySelector("#book");
@@ -11,11 +11,11 @@ const paper5 = document.querySelector("#p5");
 const paper6 = document.querySelector("#p6");
 
 
-// Event Listener
+
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
 
-// Business Logic
+
 let currentLocation = 1;
 let numOfPapers = 6;
 let maxLocation = numOfPapers + 1;

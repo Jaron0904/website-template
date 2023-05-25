@@ -5,14 +5,12 @@ class Obstakel{
       this.xgrootte=xgrootte;
       this.ygrootte=ygrootte;
       this.obstakelkleur=obstakelkleur;
-      this.obstakelsnelheid=random(1,5);
+      this.obstakelsnelheid=obstakelsnelheid;
       this.level=1;
       this.isStopped=false;
-      this.i=0;
     }
-    move(){
+    move(){ //wanneer deze functie wordt aangeroepen in de wereld zal het blokje beginnen met bewegen
       this.x+=this.obstakelsnelheid;
-      
       if(this.isStopped==false){
       if(this.x>width){
         if(this.ygrootte>120){
