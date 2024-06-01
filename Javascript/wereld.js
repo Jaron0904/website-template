@@ -21,7 +21,6 @@ function preload(){ //waar de verschillende bestanden ingelezen moeten worden
   achtergrond=loadImage('bestanden/background.avif');
   geluid1=loadSound('bestanden/sound5.mp4')
   geluid2=loadSound('bestanden/ough1.mp4')
-
 }
 function setup() {
   createCanvas(windowWidth-4.5, windowHeight-4.5);

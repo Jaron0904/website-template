@@ -76,13 +76,13 @@ a:hover {
     z-index: 1; /*navbar wordt bovenop de andere delen weergegeven tenzij het andere deel een z-index heeft van 2 of meer*/
   }
   
-  .navbar a {
+   .navbar a {
     display: inline-block;
-    /*justify-content: center;*/
-    font-size: 20px;
-    color: white;
-    /*text-align: center;*/
-    padding: 14px 16px;
+    justify-content: center;
+    font-size: 20px; 
+    color: white; 
+    text-align: center;
+    padding: 14px 16px; 
     text-decoration:none;
     margin: auto;
   }
@@ -144,7 +144,7 @@ a:hover {
     display: flex;
     -ms-flex-wrap: wrap; 
     flex-wrap: wrap;
-  } */
+  }  */
   
   /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
@@ -202,13 +202,9 @@ a:hover {
   padding-left: 30px;
   padding-top: 10px;
   text-align: center;
-margin-top: 15px;
+  margin-top: 15px;
 }
 
-/* i {
-  font-size: 50px;
-  color: gray;
-} */
 
 .invulbalk{
   border-radius: 10px;
@@ -384,8 +380,6 @@ nav.open ~ .overlay{
   padding: 30px;
 }
 
-
-
   /*Proces bundel weergave*/
   .boekje{
     margin: 0;
@@ -408,7 +402,6 @@ nav.open ~ .overlay{
     width: 40%;
     transition: transform 0.8s;
 }
-
 
 .paper {
     position: absolute;
@@ -438,6 +431,7 @@ nav.open ~ .overlay{
 .back {
     z-index: 0;
 }
+
 .front-content,
 .back-content {
     width: 100%;
@@ -473,7 +467,6 @@ nav.open ~ .overlay{
   transition: transform 1s;
 }
 
-
 button:focus {
     outline: none;
 }
@@ -483,7 +476,7 @@ button:hover i {
 }
 
 i {
-    font-size: 50px;
+    font-size: 45px;
     color: gray;
 }
 
@@ -499,15 +492,19 @@ i {
 #p3 {
     z-index: -2;
 }
+
 #p4{
     z-index: -3;
 }
+
 #p5{
     z-index: -4;
 }
+
 #p6{
     z-index: -5;
 }
+
 .main2 {   
   -ms-flex: 70%; 
   flex: 70%;

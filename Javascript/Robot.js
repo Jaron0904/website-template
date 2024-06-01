@@ -60,7 +60,7 @@ class Robot {
     ellipse((this.x)*this.size, (this.y-85)*this.size, 130*this.size, 65*this.size);
     ellipse((this.x)*this.size, (this.y-110)*this.size, 125*this.size, 60*this.size);
     ellipse((this.x)*this.size, (this.y-135)*this.size, 100*this.size, 50*this.size);
-
+    
     //hoofd
     circle((this.x)*this.size, (this.y-185)*this.size, 75*this.size);
     push();
